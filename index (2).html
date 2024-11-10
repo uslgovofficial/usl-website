@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <TITLE>The United States of Leafland</TITLE>
+    <link rel="icon" type="image/x-icon" href="/files/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #FFFFFF;
+            color: #004080;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #004080;
+        }
+
+        .navbar a, .dropbtn {
+            float: left;
+            font-size: 12px;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            border: none;
+            background-color: #004080;
+            margin: 0;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #8080FF;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #8080FF;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            font-size: 10px;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .container {
+            position: relative;
+            width: 65%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .3s ease;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .container:hover .overlay {
+            opacity: 1;
+        }
+
+        .icon {
+            color: white;
+            font-size: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: black;
+            font-weight: bold;
+        }
+
+        .a-sitereturn {
+            font-size: 35px;
+            color: #004080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button-style1 {
+	        background-color:#44c767;
+	        border-radius:9px;
+	        border:2px solid #18ab29;
+	        display:inline-block;
+	        cursor:pointer;
+	        color:#ffffff;
+	        font-family:Arial;
+	        font-size:12px;
+	        font-weight:bold;
+	        padding:15px 38px;
+	        text-decoration:none;
+	        text-shadow:3px 3px 2px #2f6627;
+        }
+
+    .button-style1:hover {
+	    background-color:#5cbf2a;
+    }
+
+    .button-style1:active {
+	    position:relative;
+	    top:1px;
+    }
+
+    .p-imgcap {
+        text-decoration: underline;
+    }
+
+    </style>
+</head>
+<body>
+<br>
+<center><a class="a-sitereturn" href="/">The United States of Leafland</a></center>
+<br>
+<div class="navbar">
+    <a href="/">Home</a>
+    <div class="dropdown">
+        <button class="dropbtn">About Leafland <i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content">
+            <a href="#">About</a>
+            <a href="#">History</a>
+            <a href="/symbols">National Symbols</a>
+            <a href="#">FAQ</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Government<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content">
+            <a href="#">General Info</a>
+            <a href="#">Our Declaration of Sovereignty</a>
+            <a href="/files/constitution.pdf">Constitution</a>
+            <a href="#">Treaties</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Federal Agencies<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content">
+            <a href="#">General Info</a>
+            <a href="#">Fed A</a>
+            <a href="#">Fed B</a>
+            <a href="#">Fed C</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Citizen Applications<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content">
+            <a href="#">Requirments</a>
+            <a href="/forms/over-13-citizenship-form/">Application Form</a>
+        </div>
+    </div>
+    <a href="/contactus">Contact Us</a>
+</div>
+
+<h1>Official Website of The United States of Leafland</h1>
+<center>
+    <p>Local Time:</p><p id="time"></p>
+
+    <script>
+        function getUtcPlus30() {
+            // Get current UTC time
+            const utcDate = new Date();
+            // Adjust for UTC+0:30
+            const utcPlus30 = new Date(utcDate.getTime() + (30 * 60 * 1000));
+            // Format date and time
+            const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short' };
+            const formattedTime = utcPlus30.toLocaleString('en-GB', options);
+            return formattedTime;
+        }
+
+        // Display the time
+        document.getElementById('time').innerText = getUtcPlus30();
+
+        function updateTime() {
+            document.getElementById('time').innerText = getUtcPlus30();
+        }
+
+        // Update the time immediately
+        updateTime();
+        // Set interval to update every minute (1000 milliseconds)
+        setInterval(updateTime, 1000);
+    </script>
+    <br>
+    <h2 style="font-weight:550">Welcome</h2>
+    <br>
+    <p></p>
+    <br><br>
+    <p>Copyright &copy; 2024 The States of Leafland</p>
+</center>
+</body>
+</html>
