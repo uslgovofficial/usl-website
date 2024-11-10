@@ -1,1 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Contact Us - The United States of Leafland</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Font style */
+            background-color: #f9f9f9; /* Background color */
+            margin: 0;
+            height: 100vh; /* Full viewport height */
+            display: flex; /* Use Flexbox */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
 
+        .navbar {
+            overflow: hidden;
+            background-color: #004080;
+        }
+
+        .navbar a, .dropbtn {
+            float: left;
+            font-size: 12px;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            border: none;
+            background-color: #004080;
+            margin: 0;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #8080FF;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #8080FF;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            font-size: 10px;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .a-sitereturn {
+            font-size: 35px;
+            color: #004080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .h1-head {
+            font-family: Arial;
+            font-size: 34px;
+        }
+
+        .form-container {
+            max-width: 600px; /* Max width for the form */
+            width: 100%; /* Full width for responsiveness */
+            background-color: #fff; /* Form background */
+            padding: 20px; /* Spacing inside the form */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            display: flex; /* Use Flexbox */
+            flex-direction: column; /* Stack form items vertically */
+        }
+
+        .input-field {
+            display: flex; /* Use Flexbox for input alignment */
+            justify-content: center; /* Center inputs horizontally */
+            margin-bottom: 15px; /* Space between inputs */
+        }
+
+        .return:after {
+            content: ' \23ce';
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%; /* Full width */
+            padding: 10px; /* Spacing inside the inputs */
+            border: 1px solid #ccc; /* Border color */
+            border-radius: 4px; /* Rounded corners */
+            font-size: 16px; /* Font size */
+            transition: border-color 0.3s; /* Smooth transition for border color */
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #007bff; /* Change border color on focus */
+            outline: none; /* Remove outline */
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #999; /* Placeholder text color */
+        }
+
+        button {
+            background-color: #007bff; /* Button background color */
+            color: #fff; /* Button text color */
+            padding: 10px 15px; /* Spacing inside the button */
+            border: none; /* No border */
+            border-radius: 4px; /* Rounded corners */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition for background color */
+            width: 100%; /* Full width for button */
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker background on hover */
+        }
+    </style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+</head>
+<body>
+<div class="form-container">
+    <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="c0f38b71-c235-4db1-999a-689f0ed0f299">
+        <div class="input-field">
+            <h1 class="h1-head">Contact Us</h1>
+        </div>
+        <div class="input-field">
+            <input type="text" name="name" required placeholder="Name">
+        </div>
+        <div class="input-field">
+            <input type="email" name="email" required placeholder="Email">
+        </div>
+        <div class="input-field">
+            <textarea name="message" required placeholder="Message"></textarea>
+        </div>
+
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+        <input type="hidden" name="redirect" value="http://leaflandgov.xyz/contactus/success.html">
+        <button type="submit">Submit Form</button><br>
+        <center><p>Or Contact us at <a href="mailto:info@leafland.xyz">info@leafland.xyz</a>.</p><br>
+        <p>Return to <a href="/">Home Page</a>.</p></center>
+    </form>
+</div>
+</body>
+</html>
